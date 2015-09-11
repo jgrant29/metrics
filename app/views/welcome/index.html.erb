@@ -1,2 +1,24 @@
-<h1>Welcome my metrics and analytics page</h1>
-<p>This is the home page for my analytics</p>
+<br>
+<div class="jumbotron">
+  <h1>Blocmetrics</h1>
+    <p>An analytics service and reporting tool that will track user activity and report results from Blocmetrics.</p>
+    <p>
+      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %> or
+      <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %>
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Charts</h2>
+      <p>Creates beautiful Javascript charts. No more fighting with charting libraries!</p>
+    </div>
+    <div class="col-md-4">
+      <h2>Group Date</h2>
+      <p>The simplest way to group by: day, week, hour of the day, and more!</p>
+    </div>
+    <div class="col-md-4">
+      <h2>Unlimited Users</h2>
+      <p>If you build it they will come.  More users equals more data!</p>
+    </div>
+  </div>
