@@ -2,6 +2,11 @@ class API::EventsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_filter :set_access_control_headers
 
+  def index
+    render html: "whaaa?", :status => 200
+  end
+
+
   def create
     registered_application = RegisteredApplication.find_by(url: request.env['HTTP_ORIGIN'])
     if registered_application.nil?
@@ -13,14 +18,10 @@ class API::EventsController < ApplicationController
         else
           render @event.errors, status: :unprocessable_entity
         end
-      end
-    end
-
-    private 
-    def event_params
-      params.require(:event).permit(:name)
+  
     end
   end
+
 
   def set_access_control_headers
     # #1
@@ -30,4 +31,11 @@ class API::EventsController < ApplicationController
     # #3
     headers['Access-Control-Allow-Headers'] = 'Content-Type'
   end
+
+  private 
+  def event_params
+    params.require(:event).permit(:name)
+  end
+
+
 end

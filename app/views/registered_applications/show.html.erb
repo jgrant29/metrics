@@ -12,7 +12,8 @@
 
 <p>
   <strong>Events:</strong>
-  <%= @events.count %>
+  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+  <%= pie_chart @registered_application.events.group(:name).count %>
 </p>
 
 
